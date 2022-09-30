@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home'%}">Logo</a>
+          <div style="display:inline-block;">
+            <ul class="navbar-nav ml-auto" style="list-style:none;" >
+              <li class="nav-item" style="display:inline;padding-right:2px;">
+                <a class="nav-link" style="text-decoration:none;" href="{% url 'home'%}">Home</a>
+              </li>
+              <li class="nav-item" style="display:inline;padding-right:2px;">
+                <a class="nav-link" style="text-decoration:none;" href="{% url 'about' %}">About me</a>
+              </li>
+              <li class="nav-item" style="display:inline;padding-right:2px;">
+                <a class="nav-link" style="text-decoration:none;" href="{% url 'portfolio' %}">Portfolio</a>
+              </li>
+              <li class="nav-item" style="display:inline;padding-right:2px;">
+                <a class="nav-link" style="text-decoration:none;" href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Contenido -->
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div>
+            <p class="copyright text-muted">Copyright &copy; 2022 · Jorge Osses (Developer) </p>
+        </div>
+    </footer>
+</body>
+</html>
