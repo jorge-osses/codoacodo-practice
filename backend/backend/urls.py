@@ -16,15 +16,16 @@ Including another URLconf
 from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path
-from core import views
+from core import views as coreviews
+from portfolio import views as portfolioviews
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
-    path('about-me/', views.about, name='about'),
-    path('portfolio/', views.portfolio, name='portfolio'),
-    path('contact/', views.contact, name='contact'),
+    path('', coreviews.home, name="home"),
+    path('about-me/', coreviews.about, name='about'),
+    path('portfolio/', portfolioviews.portfolio, name='portfolio'),
+    path('contact/', coreviews.contact, name='contact'),
 ]
 
 if settings.DEBUG:
